@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Count Down</title>
+</head>
+<body>
+    <div class="container">
+        <div class='title'>
+            <h1>LIVE</h1>
+            <p>Em breve</p>
+        </div>
+
+        <div class="countdown">
+            <div >
+                <h1 id="days">00</h1>
+                <p>Dias</p>
+            </div>
+            <div>
+                <h1 id="hours">00</h1>
+                <p>Horas</p>
+            </div>
+            <div>
+                <h1  id="minutes">00</h1>
+                <p>Minutos</p>
+            </div>
+            <div>
+                <h1 id="seconds">00</h1>
+                <p>Segundos</p>
+            </div>
+        </div>
+
+        <div class='button' id="cadastre">
+            <p>Cadastre-se</p>
+        </div>
+    </div>
+
+        <div class="modalContainer">
+            <h1>Digite a data do seu Evento</h1>
+
+            <div class="modal">
+                <label for="mouth">Mês</label>
+                <input type="datetime" name="mouth" id="mouth" required max="12" minlength="2" maxlength="2" placeholder="00">
+
+                <label for="day">Dia</label>
+                <input type="datetime" name="day" id="day" required max="31" minlength="2" maxlength="2" placeholder="00">
+
+                <label for="hour">Hora</label>
+                <input type="datetime" name="hour" id="hour" required max="23" minlength="2" maxlength="2" placeholder="00">
+
+                <label for="minute">Minuto</label>
+                <input type="datetime" name="minute" id="minute" required max="59" minlength="2" maxlength="2" placeholder="00">
+
+                <input type="submit" value="Marcar Evento" id="eventButton">
+            </div>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('imagens/bg.jpg');
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: #00000080;
+}
+
+.title {
+    font-size: calc(10px + 3vw);
+}
+
+.title p {
+    font-size: calc(10px + 1vw);
+}
+
+.countdown{
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.countdown h1{
+    font-size: calc(10px + 8vw);
+    text-shadow: 0 0 10px  whitesmoke;
+}
+
+.button{
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    border: solid 2px whitesmoke;
+}
+
+.button:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.modalContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 30vw;
+    padding: 20px;
+
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.779);
+
+    display: none;
+}
+
+.modalContainer h1{
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.835);
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    background-color: aliceblue;
+    color: black;
+
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 400px;
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.502);
+}
+
+input{
+    width: 70px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="submit"]{
+    width: 130px;
+    padding: 5px;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: aliceblue;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.903);
+    border: 2px solid black;
+    cursor: pointer;
+}
