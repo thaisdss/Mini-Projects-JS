@@ -3,6 +3,12 @@
 let id = 0;
 const modal = document.querySelector(".modalContainer")
 
+$(document).mouseup(function (e) {
+    if ($(e.target).closest(modal).length === 0){
+        $(modal).hide();
+    }
+})
+
 const clearModal = () => {
     const input = document.querySelectorAll("input")
 
@@ -77,19 +83,7 @@ const eventData = () => {
     }
 }
 
-const handleClickOutside = (event) => {
-
-    if (modal.contains(event.target) == false) {
-        modal.style.display = 'none';
-        document.removeEventListener('click', handleClickOutside);
-    }
-}
-
-const openModal = () => {
-    modal.style.display = "block"
-
-    setTimeout(() => {document.addEventListener("click", handleClickOutside)}, 200)
-}
+const openModal = () => modal.style.display = "block"
 
 document.getElementById("cadastre").addEventListener("click", openModal)
 document.getElementById("eventButton").addEventListener("click", eventData)
