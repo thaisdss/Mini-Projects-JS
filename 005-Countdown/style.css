@@ -101,7 +101,7 @@ input{
     text-align: center;
 }
 
-input[type="submit"]{
+button{
     width: 130px;
     padding: 5px;
 

@@ -12,7 +12,7 @@ $(document).mouseup(function (e) {
 const clearModal = () => {
     const input = document.querySelectorAll("input")
 
-    for(let i = 0; i< (input.length -1); i++){
+    for(let i = 0; i<= (input.length -1); i++){
         input[i].value = ""
     }
 }
@@ -69,21 +69,19 @@ const timeLeft = (data) => {
     closeModal()
 }
 
-const eventData = () => {
-    const day = document.getElementById("day").value
+const eventData = (event) => {
+    event.preventDefault()
+
     const mouth = document.getElementById("mouth").value
+    const day = document.getElementById("day").value
     const hour = document.getElementById("hour").value
     const minute = document.getElementById("minute").value
     const data = [mouth, day, hour, minute]
 
-    if(data[0] == "" || data[1] == "" || data[2] == "" || data[3] == ""){
-        alert("Preencha todos os campos!")
-    }else{
         timeLeft(data)
-    }
 }
 
 const openModal = () => modal.style.display = "block"
 
 document.getElementById("cadastre").addEventListener("click", openModal)
-document.getElementById("eventButton").addEventListener("click", eventData)
+document.querySelector(".modal").addEventListener("submit", eventData)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>Count Down</title>
 </head>
+
 <body>
     <div class="container">
         <div class='title'>
@@ -16,7 +18,7 @@
         </div>
 
         <div class="countdown">
-            <div >
+            <div>
                 <h1 id="days">00</h1>
                 <p>Dias</p>
             </div>
@@ -25,7 +27,7 @@
                 <p>Horas</p>
             </div>
             <div>
-                <h1  id="minutes">00</h1>
+                <h1 id="minutes">00</h1>
                 <p>Minutos</p>
             </div>
             <div>
@@ -39,27 +41,29 @@
         </div>
     </div>
 
-        <div class="modalContainer">
-            <h1>Digite a data do seu Evento</h1>
+    <div class="modalContainer">
+        <h1>Digite a data do seu Evento</h1>
 
-            <div class="modal">
-                <label for="mouth">Mês</label>
-                <input type="datetime" name="mouth" id="mouth" required max="12" minlength="2" maxlength="2" placeholder="00">
+        <form class="modal">
+            <label for="mouth">Mês</label>
+            <input type="datetime" name="mouth" id="mouth" required pattern="^\b[00-12]{2}$" placeholder="00">
 
-                <label for="day">Dia</label>
-                <input type="datetime" name="day" id="day" required max="31" minlength="2" maxlength="2" placeholder="00">
+            <label for="day">Dia</label>
+            <input type="datetime" name="day" id="day" required pattern="^\b[00-31]{2}$" placeholder="00">
 
-                <label for="hour">Hora</label>
-                <input type="datetime" name="hour" id="hour" required max="23" minlength="2" maxlength="2" placeholder="00">
+            <label for="hour">Hora</label>
+            <input type="datetime" name="hour" id="hour" required pattern="^\b[00-23]{2}$" placeholder="00">
 
-                <label for="minute">Minuto</label>
-                <input type="datetime" name="minute" id="minute" required max="59" minlength="2" maxlength="2" placeholder="00">
+            <label for="minute">Minuto</label>
+            <input type="datetime" name="minute" id="minute" required pattern="^\b[00-59]{2}$" placeholder="00">
 
-                <input type="submit" value="Marcar Evento" id="eventButton">
-            </div>
-        </div>
-        
+
+            <button type="submit" id="eventButton">Marcar Evento</button>
+        </form>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
