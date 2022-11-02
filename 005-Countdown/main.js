@@ -69,16 +69,38 @@ const timeLeft = (data) => {
     closeModal()
 }
 
+
+const validateMonth = (month) => {
+    return parseInt(month) >= 1 && parseInt(month) <= 12
+}
+
+const validateDay = (day) => {
+    return parseInt(day) >= 1 && parseInt(day) <= 31
+}
+
+const validateHour = (hour) => {
+    return parseInt(hour) >= 0 && parseInt(hour) <= 23
+}
+
+const validateMinute = (minute) => {
+    return parseInt(minute) >= 0 && parseInt(minute) <= 59
+}
+
 const eventData = (event) => {
     event.preventDefault()
 
-    const mouth = document.getElementById("mouth").value
+    const month = document.getElementById("month").value
     const day = document.getElementById("day").value
     const hour = document.getElementById("hour").value
     const minute = document.getElementById("minute").value
-    const data = [mouth, day, hour, minute]
 
-        timeLeft(data)
+    if(!validateMonth(month) || !validateDay(day) || !validateHour(hour) || !validateMinute(minute)){
+        return alert('Insira uma data válida!')
+    }
+
+    const data = [month, day, hour, minute]
+
+    timeLeft(data)
 }
 
 const openModal = () => modal.style.display = "block"
