@@ -46,16 +46,16 @@
 
         <form class="modal">
             <label for="mouth">Mês</label>
-            <input type="datetime" name="mouth" id="mouth" required pattern="^\b[00-12]{2}$" placeholder="00">
+            <input type="datetime" name="mouth" id="mouth" required minlength="2" maxlength="2" placeholder="00">
 
             <label for="day">Dia</label>
-            <input type="datetime" name="day" id="day" required pattern="^\b[00-31]{2}$" placeholder="00">
+            <input type="datetime" name="day" id="day" required minlength="2" maxlength="2" placeholder="00">
 
             <label for="hour">Hora</label>
-            <input type="datetime" name="hour" id="hour" required pattern="^\b[00-23]{2}$" placeholder="00">
+            <input type="datetime" name="hour" id="hour" required minlength="2" maxlength="2" placeholder="00">
 
             <label for="minute">Minuto</label>
-            <input type="datetime" name="minute" id="minute" required pattern="^\b[00-59]{2}$" placeholder="00">
+            <input type="datetime" name="minute" id="minute" required minlength="2" maxlength="2" placeholder="00">
 
             <button type="submit" id="eventButton">Marcar Evento</button>
         </form>
