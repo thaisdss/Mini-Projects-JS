@@ -60,13 +60,22 @@ const countdown = (time) => {
     id = setInterval(count, 1000)
 }
 
+const validateTime = (time) => {
+    return time <= 0
+}
+
 const timeLeft = (data) => {
     const eventDate = new Date (`${data[0]}-${data[1]}-${data[2]} ${data[3]}:${data[4]}:00`)
     const today = Date.now()
+    const time = Math.floor((eventDate - today) / 1000)
 
     stopCounting()
 
-    countdown(Math.floor((eventDate - today) / 1000))
+    if(validateTime(time)){
+        return alert("Insira uma data ou horário válido")
+    }
+
+    countdown(time)
 
     closeModal()
 }
@@ -79,21 +88,6 @@ const validateMinute = (minute) => {
     return parseInt(minute) >= 0 && parseInt(minute) <= 59
 }
 
-const validateTime = (hour, minute) => {
-    const newDate = new Date()
-    const currentTime = `${newDate.getHours()}:${newDate.getMinutes()}`
-    const time = `${hour}:${minute}`
-    
-    return time > currentTime
-}
-
-const validadeDate = (date) => {
-    const currentDate = new Date().toLocaleDateString()
-    const newDate = date.split("-").reverse().join("/")
-
-    return newDate >= currentDate
-}
-
 const eventData = (event) => {
     event.preventDefault()
 
@@ -101,12 +95,8 @@ const eventData = (event) => {
     const [year, month, day] = date.split("-")
     const hour = document.getElementById("hour").value
     const minute = document.getElementById("minute").value
-
-    if(!validadeDate(date)){
-        return alert('Insira uma data válida!')
-    }
     
-    if(!validateTime(hour, minute) || !validateHour(hour) || !validateMinute(minute)){
+    if(!validateHour(hour) || !validateMinute(minute)){
         return alert("Insira um horário válido")
     }
 
