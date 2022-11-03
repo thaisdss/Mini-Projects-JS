@@ -13,11 +13,15 @@
 <body>
     <div class="container">
         <div class='title'>
-            <h1>LIVE</h1>
-            <p>Em breve</p>
+            <h1>Contagem Regressiva</h1>
         </div>
 
         <div class="countdown">
+            <div>
+                <h1 id="years">00</h1>
+                <p>Anos</p>
+            </div>
+
             <div>
                 <h1 id="days">00</h1>
                 <p>Dias</p>
@@ -45,11 +49,9 @@
         <h1>Digite a data do seu Evento</h1>
 
         <form class="modal">
-            <label for="month">Mês</label>
-            <input type="datetime" name="month" id="month" required minlength="2" maxlength="2" placeholder="00">
 
-            <label for="day">Dia</label>
-            <input type="datetime" name="day" id="day" required minlength="2" maxlength="2" placeholder="00">
+            <label for="date">Data</label>
+            <input type="date" name="date" id="date">
 
             <label for="hour">Hora</label>
             <input type="datetime" name="hour" id="hour" required minlength="2" maxlength="2" placeholder="00">

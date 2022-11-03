@@ -26,13 +26,9 @@ body{
     font-size: calc(10px + 3vw);
 }
 
-.title p {
-    font-size: calc(10px + 1vw);
-}
-
 .countdown{
     display: flex;
-    width: 60vw;
+    width: 80vw;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -96,7 +92,7 @@ body{
 }
 
 input{
-    width: 70px;
+    width: 100px;
     border-radius: 5px;
     text-align: center;
 }

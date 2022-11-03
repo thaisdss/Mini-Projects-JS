@@ -32,16 +32,20 @@ const update = (time) => {
     const minutes = document.getElementById("minutes")
     const hours = document.getElementById("hours")
     const days = document.getElementById("days")
+    const years = document.getElementById("years")
 
     const qttSeconds = time % 60
     const qttMinutes = Math.floor((time % (60 * 60)) / 60)
     const qttHours = Math.floor((time % (60 * 60 * 24)) / (60 * 60))
-    const qttDays = Math.floor(time / (60 * 60 * 24))
+    const qttDays = Math.floor((time % (60 * 60 * 24 * 365)) / (60 * 60 * 24))
+    const qttYears = Math.floor(time / (60 * 60 * 24 * 365))
 
     seconds.textContent = formatDigit(qttSeconds)
     minutes.textContent = formatDigit(qttMinutes)
     hours.textContent = formatDigit(qttHours)
-    days.textContent = formatDigit(qttDays)
+    days.textContent = `${qttDays}`.length >= 3 ? `${qttDays}` : formatDigit(qttDays)
+    years.textContent = `${qttYears}`.length >= 3 ? `${qttYears}` : formatDigit(qttYears)
+    
 }
 
 const countdown = (time) => {
@@ -57,9 +61,7 @@ const countdown = (time) => {
 }
 
 const timeLeft = (data) => {
-    const date = new Date()
-    const year = date.getFullYear()
-    const eventDate = new Date (`${year}-${data[0]}-${data[1]} ${data[2]}:${data[3]}:00`)
+    const eventDate = new Date (`${data[0]}-${data[1]}-${data[2]} ${data[3]}:${data[4]}:00`)
     const today = Date.now()
 
     stopCounting()
@@ -67,15 +69,6 @@ const timeLeft = (data) => {
     countdown(Math.floor((eventDate - today) / 1000))
 
     closeModal()
-}
-
-
-const validateMonth = (month) => {
-    return parseInt(month) >= 1 && parseInt(month) <= 12
-}
-
-const validateDay = (day) => {
-    return parseInt(day) >= 1 && parseInt(day) <= 31
 }
 
 const validateHour = (hour) => {
@@ -86,19 +79,38 @@ const validateMinute = (minute) => {
     return parseInt(minute) >= 0 && parseInt(minute) <= 59
 }
 
+const validateTime = (hour, minute) => {
+    const newDate = new Date()
+    const currentTime = `${newDate.getHours()}:${newDate.getMinutes()}`
+    const time = `${hour}:${minute}`
+    
+    return time > currentTime
+}
+
+const validadeDate = (date) => {
+    const currentDate = new Date().toLocaleDateString()
+    const newDate = date.split("-").reverse().join("/")
+
+    return newDate >= currentDate
+}
+
 const eventData = (event) => {
     event.preventDefault()
 
-    const month = document.getElementById("month").value
-    const day = document.getElementById("day").value
+    const date = document.getElementById("date").value
+    const [year, month, day] = date.split("-")
     const hour = document.getElementById("hour").value
     const minute = document.getElementById("minute").value
 
-    if(!validateMonth(month) || !validateDay(day) || !validateHour(hour) || !validateMinute(minute)){
+    if(!validadeDate(date)){
         return alert('Insira uma data válida!')
     }
+    
+    if(!validateTime(hour, minute) || !validateHour(hour) || !validateMinute(minute)){
+        return alert("Insira um horário válido")
+    }
 
-    const data = [month, day, hour, minute]
+    const data = [year, month, day, hour, minute]
 
     timeLeft(data)
 }
