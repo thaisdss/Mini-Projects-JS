@@ -12,7 +12,7 @@ body{
 .calculator {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #DC143C;
+    background-color: #FF1493;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px black;
@@ -50,6 +50,6 @@ body{
 }
 
 button:hover{
-    background-color: rgb(220,90,90);
+    background-color: #FF69B4;
     color: black;
 }

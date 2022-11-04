@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #22272E;
+    --secondary-color: #444C56;
+    --tertiary-color: #FFC0CB;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-color);
+    font: bold 2rem 'Open Sans', sans-serif;
+}
+
+.todo {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.todo__title {
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 4px var(--secondary-color);
+    border-radius: 8px;
+    font-size: 3rem;
+    color: var(--tertiary-color);
+}
+
+.todo__list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo__task{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    box-shadow: 1px 1px 4px var(--secondary-color);
+    border-radius: 8px;
+}
+
+.todo__task > div {
+    width: 80%;
+    color: var(--tertiary-color);
+    margin-left: 5px;
+}
+
+.todo__task:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+}
+
+.todo__task:hover div{
+    color: var(--primary-color);
+}
+
+.todo__task > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.todo__task > input[type='button']{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+}
+
+.todo__task > input[type='button'],
+.todo__task > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+    cursor: pointer;
+}
+
+
+.todo__task > input[type='checkbox']:checked  + div {
+    text-decoration:line-through;
+    color: var(--secondary-color);
+}
+
+.todo__task > input[type='checkbox']:checked:hover  + div {
+    color: var(--primary-color);
+}
+
+.todo__new-task{
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 4px var(--secondary-color);
+    margin: 10px;
+    font: inherit;
+    border-radius: 8px;
+}
+
+.todo__new-task div{
+    color: var(--tertiary-color);
+}
+
+.todo__new-task > input{
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.todo__new-task > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+    color: rgba(255, 212, 219, 0.702);
+}
+
+@media(max-width: 1132px){
+    .todo{
+        width: 80vw;
+    }
+}
+
+@media(max-width: 600px){
+    html{
+        font-size: 52.5%
+    }
+}
