@@ -11,7 +11,6 @@ let previousNumber;
 const PendingOperation = () => operator != undefined;
 
 const calculate = () => {
-    console.log(operator)
     if(PendingOperation()){
         const currentNumber = parseFloat(display.textContent.replace(",", "."));
         newNumber = true;
@@ -55,7 +54,7 @@ const clearCalculation = () => {
     clearDisplay();
     newNumber = true;
     operator = undefined;
-    previousNumber = undefined
+    previousNumber = undefined;
 };
 document.getElementById("clearCalculation").addEventListener("click", clearCalculation);
 

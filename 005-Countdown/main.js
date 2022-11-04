@@ -80,26 +80,15 @@ const timeLeft = (data) => {
     closeModal()
 }
 
-const validateHour = (hour) => {
-    return parseInt(hour) >= 0 && parseInt(hour) <= 23
-}
-
-const validateMinute = (minute) => {
-    return parseInt(minute) >= 0 && parseInt(minute) <= 59
-}
-
 const eventData = (event) => {
     event.preventDefault()
 
     const date = document.getElementById("date").value
     const [year, month, day] = date.split("-")
-    const hour = document.getElementById("hour").value
-    const minute = document.getElementById("minute").value
-    
-    if(!validateHour(hour) || !validateMinute(minute)){
-        return alert("Insira um horário válido")
-    }
 
+    const hourAndMinute = document.getElementById("hourAndMinute").value
+    const [hour, minute] = hourAndMinute.split(":")
+    
     const data = [year, month, day, hour, minute]
 
     timeLeft(data)
