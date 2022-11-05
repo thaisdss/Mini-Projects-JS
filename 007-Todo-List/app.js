@@ -20,14 +20,14 @@ const clearTasks = () => {
     }
 }
 
-const clearTaskInput = () => {
-    document.querySelector("input[type=text]").value = ""
-}
-
 const updateScreen = () => {
     clearTasks()
     const database = getDatabase()
     database.forEach((data, index) => createTask(data.task, data.status, index))
+}
+
+const clearTaskInput = () => {
+    document.querySelector("input[type=text]").value = ""
 }
 
 const setDatabase = (database) => localStorage.setItem("todoList", JSON.stringify(database));
