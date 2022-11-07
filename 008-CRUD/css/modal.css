@@ -96,6 +96,10 @@
 
     .modal-button{
         display: flex;
-        gap: 4px;
+        gap: 5px;
+    }
+
+    .modal-button:nth-child(2){
+        margin-right: 5px;
     }
 }

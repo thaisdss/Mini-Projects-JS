@@ -121,21 +121,22 @@ const isEditOrDelete = (event) => {
     }
 }
 
-const maskCell = () => {
+const maskCell = (event) => {
     const Fieldcell = document.getElementById("cell")
     const cell = Fieldcell.value
+    const backspace = event.key == "Backspace"
 
-    if(cell.length == 1){
+    if(cell.length == 1 && !backspace){
         const newcell = "(" + cell;
         Fieldcell.value = newcell;
     }
 
-    if(cell.length == 3){
+    if(cell.length == 3 && !backspace){
         const newcell = cell + ")";
         Fieldcell.value = newcell;
     }
 
-    if(cell.length == 9){
+    if(cell.length == 9 && !backspace){
         const newcell = cell + "-";
         Fieldcell.value = newcell;
     }
@@ -148,6 +149,6 @@ updateTable()
 document.getElementById("registerClient").addEventListener("click", openModal)
 document.getElementById("modalClose").addEventListener("click", closeModal)
 document.getElementById("cancel").addEventListener("click", closeModal)
-document.getElementById("cell").addEventListener("keyup", maskCell)
+document.getElementById("cell").addEventListener("keypress", maskCell)
 document.getElementById("form").addEventListener("submit", saveClient)
 document.querySelector("#tableClient>tbody").addEventListener("click", isEditOrDelete)
