@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocketcard</title>
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <h2>Compartilhe seu #rocketcard</h2>
+
+            <div class="bg-card">
+                <div class="card">
+                    <header>
+                        <div class="logo-container">
+                            <img src="assets/logo.svg" alt="Logo">
+                        </div>
+                        <h2 id="name"></h2>
+                    </header>
+
+                    <div class="profile-img">
+                        <img src="" alt="profile image">
+                    </div>
+
+                    <div class="profile-info">                        
+                        <div class="followers-div">
+                            <img src="assets/followers.svg" alt="Icon followers">
+                            <span id="followers"></span>
+                        </div>
+
+                        <div class="following-div">
+                            <img src="assets/following.svg" alt="Icon following">
+                            <span id="following"></span>
+                        </div>
+
+                        <div class="repository-div">
+                            <img src="assets/repository.svg" alt="Icon repository">
+                            <span id="repository"></span>
+                        </div>
+
+                        <div class="company-div">
+                            <img src="assets/company.svg" alt="Icon company">
+                            <span id="company"></span>
+                        </div>
+
+                        <div class="location-div">
+                            <img src="assets/location.svg" alt="Icon location">
+                            <span id="location"></span>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <img src="assets/logo.svg" alt="Logo">
+                        ROCKETCARD
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="user-name-div">
+                <h2>Digite seu nome de usuário do GitHub</h2>
+                <input type="text" name="userName" id="userName">
+                <button id="sendUserName">Enviar</button>
+            </div>
+
+            <div class="customize">
+                <h2>Customizar Rocketcard</h2>
+                <button id="generateBackground">Gerar background</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
