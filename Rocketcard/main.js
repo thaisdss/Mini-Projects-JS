@@ -2,10 +2,17 @@ const showCustomize = () => {
     document.querySelector(".customize").style.display = "block";
 }
 
+const changeHeightContainer = () => {
+    const container = document.querySelector(".container");
+    container.classList.add("show-card");
+    container.classList.remove("hide-card");
+}
+
 const showCard = () => {
     document.querySelector(".card-container").style.display = "block";
 
-    showCustomize()
+    changeHeightContainer();
+    showCustomize();
 }
 
 const isNull = (elementName, info) => {
@@ -64,8 +71,10 @@ const checkKey = (event) => {
 
 const addBackground = (color) => {
     const bgCard = document.querySelector(".bg-card");
+    const profileImg = document.querySelector(".profile-img > img");
 
     bgCard.style.background = color;
+    profileImg.style.borderColor = color;
 }
 
 const generateBackground = () => {
@@ -79,6 +88,9 @@ const generateBackground = () => {
     addBackground(color)
 }
 
+const print = () => window.print();
+
 document.querySelector("#sendUserName").addEventListener("click", getDataApi);
 window.addEventListener("keypress", checkKey)
 document.querySelector("#generateBackground").addEventListener("click", generateBackground);
+document.querySelector(".card-container > h2").addEventListener("click", print)

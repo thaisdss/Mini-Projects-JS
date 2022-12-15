@@ -19,10 +19,6 @@
 body{
     background-color: #0E1218;
 
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-
     color: var(--text);
 }
 
@@ -32,16 +28,24 @@ body{
     justify-content: center;
     gap: 100px;
 
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
+}
 
-    padding: 80px 0px;
+.hide-card{
+    height: 100vh;
+}
+
+.show-card{
+    height: none;
+    padding: 30px 0px;
 }
 
 .container h2{
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
+    text-align: center;
 }
 
 .card-container{
@@ -51,13 +55,19 @@ body{
 .card-container > h2{
     text-align: center;
     margin-bottom: 22px;
+    cursor: pointer;
+}
+
+.card-container > h2:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }
 
 .bg-card{
-    background-color: var(--bg);
+    background-color: var(--img-profile);
 
     width: 438px;
-    height: 677px;
+    height: 637px;
     border-radius: 50px;
 
     transition: background-color 0.2s;
@@ -69,21 +79,22 @@ body{
 
 .card{
     width: 407px;
-    height: 637px;
+    height: 607px;
     border-radius: 50px;
 
     background-color: var(--bg-card);
+    overflow: hidden;
 }
 
 .card header{
-    width: 230px;
+    width: 100%;
     height: 54.44px;
 
-    margin: 37px 0px 30px 33px;
+    margin: 37px 15px 30px 15px;
 
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .card header .logo-container{
@@ -109,23 +120,25 @@ body{
 }
 
 .card .profile-img{
-    margin: 0px 0px 0px 90px;
+    position: relative;
+    top: 5%;
+    margin-left: 28%;
 }
 
 .card .profile-img > img{
-    width: 290px;
+    width: 300px;
     height: 280px;
 
     background: url(22185823.png);
     border: 10px solid var(--img-profile);
     border-radius: 300px;
+    transform: scale(122%);
 }
 
 .card .profile-info{
     background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
     border-radius: 50px;
-    min-width: 190px;
-    max-width: 250px;
+    width: 250px;
     height: 194.7px;
     padding: 0px 20px;
 
@@ -135,9 +148,9 @@ body{
     align-items: flex-start;
     gap: 10px;
 
-    position: absolute;
-    top: 70%;
-    left: 19%;
+    position: relative;
+    bottom: 17%;
+    left: 5%;
 }
 
 .card footer{
@@ -145,9 +158,9 @@ body{
     font-size: 20px;
     line-height: 30px;
 
-    position: absolute;
-    top: 105%;
-    left: 32%;
+    position: relative;
+    bottom: 13%;
+    left: 50%;
 }
 
 .card footer img{
