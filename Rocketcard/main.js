@@ -22,6 +22,12 @@ const isNull = (elementName, info) => {
 }
 
 const addInfoProfile = (elementName, info, infoLegend) => {
+    const divInfoProfile = document.querySelector(`.${elementName}-div`);
+
+    if(divInfoProfile){
+        divInfoProfile.style.display = "block";
+    }
+
     const element = document.querySelector(`#${elementName}`);
 
     if(infoLegend === undefined){
